@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dff4ff">
+  <meta name="description" content="BetterEdge Solutions Inc. workforce management portal">
+  <title>BESI | Workforce Portal</title>
+  <style>
+    :root { color-scheme: light; --ink:#16345c; --muted:#57718d; --blue:#dff4ff; --pink:#ffe4f1; --royal:#254c98; --line:#cbdff0; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif; color:var(--ink); background:radial-gradient(circle at 85% 10%,#ffddeb 0,transparent 28%),radial-gradient(circle at 0 70%,#d7f3ff 0,transparent 38%),#f7fbff; }
+    a { color:inherit; }
+    .shell { max-width:1160px; margin:auto; padding:26px 24px 70px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:850; letter-spacing:.02em; font-size:21px; }
+    .mark { position:relative; width:47px; height:47px; flex:none; border-radius:14px; background:linear-gradient(155deg,#70cbfa 0 47%,#fa9bc9 48% 100%); box-shadow:0 7px 19px #6ab8df40; display:grid; place-items:center; color:#fff; font-weight:900; font-size:23px; }
+    .mark::after { content:""; position:absolute; width:13px; height:13px; right:-3px; top:-3px; border-radius:4px; transform:rotate(45deg); background:#a9e9f7; }
+    .eyebrow { display:block; color:var(--muted); font-size:11px; font-weight:550; letter-spacing:0; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:46px; padding:12px 20px; border-radius:13px; text-decoration:none; font-weight:750; background:var(--royal); color:#fff; box-shadow:0 8px 20px #244b9830; transition:transform .15s,box-shadow .15s; }
+    .button:hover:not([aria-disabled="true"]) { transform:translateY(-2px); box-shadow:0 11px 24px #244b9840; }
+    .button:focus-visible { outline:3px solid #ed82b6; outline-offset:3px; }
+    .button[aria-disabled="true"] { cursor:not-allowed; opacity:.65; }
+    .top-link { padding:10px 16px; min-height:40px; font-size:13px; }
+    main { margin-top:70px; }
+    .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; }
+    .pill { display:inline-block; padding:8px 13px; border:1px solid #b9ddf2; border-radius:999px; color:#285b93; background:#e8f7ff; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { font-size:clamp(42px,5.6vw,72px); line-height:1.07; letter-spacing:-.05em; margin:24px 0; max-width:670px; }
+    h1 em { font-style:normal; color:#e875ac; }
+    .lead { font-size:18px; line-height:1.7; color:var(--muted); max-width:540px; margin:0 0 30px; }
+    .hero-note { margin-top:16px; font-size:13px; color:var(--muted); }
+    .art { position:relative; min-height:410px; border-radius:32px; background:linear-gradient(135deg,#d7f2ff,#fff4fa 72%); border:1px solid #fff; box-shadow:0 25px 70px #7db5d627; overflow:hidden; padding:28px; }
+    .art::before,.art::after { content:""; position:absolute; border-radius:50%; }
+    .art::before { width:245px; height:245px; background:#ffb9d7a1; right:-65px; top:-75px; }
+    .art::after { width:210px; height:210px; background:#9ddffa88; left:-80px; bottom:-95px; }
+    .preview { position:relative; z-index:1; margin:32px auto 0; max-width:420px; background:#ffffffeb; border:1px solid #e3eef6; border-radius:21px; box-shadow:0 22px 45px #31669d24; overflow:hidden; }
+    .preview-head { display:flex; justify-content:space-between; align-items:center; padding:19px 22px; border-bottom:1px solid #e6eff8; font-weight:800; }
+    .preview-head small { color:#db6b9e; background:#ffecf5; padding:6px 9px; border-radius:99px; font-size:11px; }
+    .preview-body { padding:22px; }
+    .preview-body p { color:var(--muted); font-size:13px; margin:4px 0 20px; }
+    .mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .mini-card { padding:16px; border-radius:14px; background:#e9f7ff; font-size:13px; font-weight:750; }
+    .mini-card:nth-child(even) { background:#fff0f6; }
+    .mini-card span { display:block; font-size:24px; margin-bottom:13px; }
+    .section-head { margin:75px 0 24px; }
+    .section-head h2 { margin:0 0 8px; font-size:30px; letter-spacing:-.03em; }
+    .section-head p { margin:0; color:var(--muted); }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .feature { background:#fff; border:1px solid #e4edf6; border-radius:20px; padding:25px; box-shadow:0 9px 30px #699aca0c; }
+    .icon { width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:#e4f5ff; color:#285b99; font-size:21px; }
+    .feature:nth-child(even) .icon { background:#ffe8f2; color:#c75c91; }
+    .feature h3 { font-size:17px; margin:20px 0 8px; }
+    .feature p { color:var(--muted); line-height:1.6; margin:0; font-size:14px; }
+    footer { margin-top:64px; padding-top:23px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; }
+    @media (max-width:780px) { .hero { grid-template-columns:1fr; gap:32px; } main { margin-top:55px; } .art { min-height:355px; } .features { grid-template-columns:1fr 1fr; } }
+    @media (max-width:560px) { .shell { padding:18px 18px 45px; } .brand { font-size:17px; } .top-link { font-size:12px; padding:9px; } .eyebrow { font-size:10px; } .features { grid-template-columns:1fr; } .art { padding:13px; min-height:335px; } .preview { margin-top:18px; } footer { flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="./" aria-label="BetterEdge Solutions Inc. home"><span class="mark" aria-hidden="true">B</span><span>BESI<span class="eyebrow">BetterEdge Solutions Inc.</span></span></a>
+      <a class="button top-link portal-link" href="#portal-setup">Open portal ↗</a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <span class="pill">Workforce management</span>
+          <h1 id="hero-title">Your people and sites, <em>in one place.</em></h1>
+          <p class="lead">A simple home for managing workforce records, site assignments, documents, and access across BetterEdge Solutions Inc.</p>
+          <a class="button portal-link" href="#portal-setup">Open Management Portal ↗</a>
+          <p class="hero-note">Authorized team members can sign in through the secure portal.</p>
+        </div>
+        <div class="art" aria-hidden="true">
+          <div class="preview">
+            <div class="preview-head"><span>Workforce overview</span><small>BESI portal</small></div>
+            <div class="preview-body"><p>Find what you need, all in one workspace.</p>
+              <div class="mini-grid">
+                <div class="mini-card"><span>♧</span>People</div><div class="mini-card"><span>⌂</span>Sites</div>
+                <div class="mini-card"><span>▤</span>Documents</div><div class="mini-card"><span>⚙</span>Access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="features-title">
+        <div class="section-head"><h2 id="features-title">Everything in its place</h2><p>Quick access to the information your team uses each day.</p></div>
+        <div class="features">
+          <article class="feature"><div class="icon" aria-hidden="true">♧</div><h3>People and assignments</h3><p>Keep employee profiles and site assignments organized.</p></article>
+          <article class="feature"><div class="icon" aria-hidden="true">⌂</div><h3>Sites and documents</h3><p>Find site information and important workforce files.</p></article>
+          <article class="feature"><div class="icon" aria-hidden="true">⚙</div><h3>Access management</h3><p>Give team members the right access for their role.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer><span>© <span id="year">2026</span> BetterEdge Solutions Inc.</span><span id="portal-setup">BESI Workforce Portal</span></footer>
+  </div>
+  <script>
+    // Replace this value with the deployed Google Apps Script web app URL ending in /exec.
+    const PORTAL_URL = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+    const validPortalUrl = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec(?:[?#].*)?$/.test(PORTAL_URL);
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.portal-link').forEach((link) => {
+      if (validPortalUrl) {
+        link.href = PORTAL_URL;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      } else {
+        link.setAttribute('aria-disabled', 'true');
+        link.title = 'Set the Apps Script web app URL in index.html first';
+        link.addEventListener('click', (event) => event.preventDefault());
+      }
+    });
+  </script>
+</body>
+</html>
