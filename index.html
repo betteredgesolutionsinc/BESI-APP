@@ -2,301 +2,967 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#bfeaf4">
 
-  <title>BetterEdge Solutions Inc. | Workforce Management</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#bfeaf4"
+  >
+
+  <title>
+    BESI | BetterEdge Solutions Inc.
+  </title>
 
   <style>
+
+    /* =========================================
+       BASIC RESET
+    ========================================= */
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #172033;
+      min-height: 100vh;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: #14213d;
 
       background:
         radial-gradient(
-          circle at 85% 15%,
-          rgba(244, 160, 195, 0.34),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 10% 85%,
-          rgba(154, 220, 237, 0.35),
+          circle at 90% 10%,
+          rgba(239, 145, 186, 0.28),
           transparent 30%
         ),
-        #fffafc;
-
-      min-height: 100vh;
+        radial-gradient(
+          circle at 5% 90%,
+          rgba(130, 207, 228, 0.28),
+          transparent 30%
+        ),
+        #fffafa;
     }
 
-    /* ==============================
+
+    /* =========================================
        HEADER
-    ============================== */
+    ========================================= */
 
-    header {
+    .header {
+
+      width: 100%;
+
+      padding:
+        24px
+        7%;
+
       display: flex;
-      align-items: center;
-      padding: 22px 7%;
-      font-weight: 800;
-      font-size: 18px;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
     }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items:
+        center;
+
+      gap: 14px;
+
+    }
+
+
+    /* BESI LOGO */
 
     .logo {
-      width: 42px;
-      height: 42px;
 
-      border-radius: 14px;
-      margin-right: 12px;
+      width: 58px;
 
-      background: linear-gradient(
-        135deg,
-        #9eddec 0 50%,
-        #ef91bd 50% 100%
-      );
+      height: 58px;
 
-      box-shadow: 0 8px 24px rgba(31, 80, 100, 0.15);
-    }
+      border-radius:
+        17px;
 
-    /* ==============================
-       MAIN
-    ============================== */
+      position:
+        relative;
 
-    main {
-      width: min(1180px, 86%);
-      margin: 55px auto;
+      display:
+        flex;
 
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      align-items:
+        center;
 
-      gap: 70px;
-      align-items: center;
-    }
+      justify-content:
+        center;
 
-    .tag {
-      display: inline-block;
+      font-size:
+        28px;
 
-      border: 1px solid #92bfd0;
-      background: rgba(190, 234, 244, 0.35);
+      font-weight:
+        900;
 
-      border-radius: 999px;
+      color:
+        white;
 
-      padding: 10px 20px;
+      background:
 
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      font-size: 13px;
-    }
-
-    h1 {
-      font-size: clamp(48px, 6vw, 78px);
-      line-height: 0.98;
-
-      margin: 38px 0 28px;
-
-      letter-spacing: -3px;
-    }
-
-    h1 span {
-      color: #e983b2;
-    }
-
-    .lead {
-      color: #667085;
-
-      font-size: 20px;
-      line-height: 1.7;
-
-      max-width: 760px;
-    }
-
-    /* ==============================
-       PORTAL BUTTON
-    ============================== */
-
-    .button {
-      display: inline-block;
-
-      margin-top: 30px;
-
-      padding: 17px 28px;
-
-      border-radius: 14px;
-
-      background: linear-gradient(
-        90deg,
-        #82cfe4,
-        #e991ba
-      );
-
-      color: white;
-
-      text-decoration: none;
-      font-weight: 800;
+        linear-gradient(
+          145deg,
+          #62c1dd 0%,
+          #62c1dd 48%,
+          #ef86b6 48%,
+          #ef86b6 100%
+        );
 
       box-shadow:
-        0 12px 30px rgba(80, 150, 180, 0.22);
+
+        0 10px 30px
+        rgba(
+          45,
+          96,
+          120,
+          0.18
+        );
+
+    }
+
+
+    .brand-text h2 {
+
+      font-size:
+        24px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        -0.5px;
+
+    }
+
+
+    .brand-text p {
+
+      margin-top:
+        3px;
+
+      color:
+        #606b80;
+
+      font-size:
+        13px;
+
+      font-weight:
+        600;
+
+    }
+
+
+    /* =========================================
+       HEADER BUTTON
+    ========================================= */
+
+    .header-button {
+
+      text-decoration:
+        none;
+
+      color:
+        white;
+
+      background:
+        #17233e;
+
+      padding:
+        13px 22px;
+
+      border-radius:
+        12px;
+
+      font-size:
+        14px;
+
+      font-weight:
+        800;
 
       transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
+        0.2s ease;
+
     }
 
-    .button:hover {
-      transform: translateY(-2px);
+
+    .header-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      opacity:
+        0.92;
+
+    }
+
+
+    /* =========================================
+       MAIN SECTION
+    ========================================= */
+
+    .main {
+
+      width:
+        min(
+          1180px,
+          86%
+        );
+
+      margin:
+        65px auto 0;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1.15fr
+        0.85fr;
+
+      gap:
+        80px;
+
+      align-items:
+        center;
+
+    }
+
+
+    /* =========================================
+       LEFT SECTION
+    ========================================= */
+
+    .tag {
+
+      display:
+        inline-block;
+
+      padding:
+        11px 22px;
+
+      border:
+        1px solid
+        #8cbccc;
+
+      border-radius:
+        50px;
+
+      background:
+        rgba(
+          181,
+          229,
+          240,
+          0.30
+        );
+
+      font-size:
+        13px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        1.5px;
+
+      color:
+        #17233e;
+
+    }
+
+
+    .hero-title {
+
+      margin-top:
+        40px;
+
+      font-size:
+        clamp(
+          50px,
+          6vw,
+          80px
+        );
+
+      line-height:
+        0.98;
+
+      letter-spacing:
+        -4px;
+
+      font-weight:
+        900;
+
+      color:
+        #17233e;
+
+    }
+
+
+    .pink {
+
+      color:
+        #e77fac;
+
+    }
+
+
+    .description {
+
+      margin-top:
+        30px;
+
+      max-width:
+        700px;
+
+      color:
+        #687386;
+
+      font-size:
+        19px;
+
+      line-height:
+        1.7;
+
+    }
+
+
+    /* =========================================
+       MAIN MANAGEMENT BUTTON
+    ========================================= */
+
+    .portal-button {
+
+      display:
+        inline-block;
+
+      margin-top:
+        34px;
+
+      padding:
+        18px 28px;
+
+      border-radius:
+        14px;
+
+      text-decoration:
+        none;
+
+      color:
+        white;
+
+      font-size:
+        16px;
+
+      font-weight:
+        900;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #70c6df,
+          #df8db3
+        );
 
       box-shadow:
-        0 16px 34px rgba(80, 150, 180, 0.28);
+
+        0 14px 32px
+        rgba(
+          81,
+          150,
+          180,
+          0.25
+        );
+
+      transition:
+        0.2s ease;
+
     }
 
-    .note {
-      color: #7b8494;
 
-      margin-top: 18px;
+    .portal-button:hover {
 
-      font-size: 14px;
-    }
-
-    /* ==============================
-       RIGHT PANEL
-    ============================== */
-
-    .panel {
-      background: linear-gradient(
-        145deg,
-        rgba(176, 228, 239, 0.82),
-        rgba(239, 154, 193, 0.52)
-      );
-
-      border-radius: 34px;
-
-      padding: 42px;
+      transform:
+        translateY(-3px);
 
       box-shadow:
-        0 24px 70px rgba(53, 84, 101, 0.12);
+
+        0 18px 38px
+        rgba(
+          81,
+          150,
+          180,
+          0.32
+        );
+
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.88);
 
-      border-radius: 24px;
+    .authorized {
 
-      padding: 30px;
+      margin-top:
+        18px;
+
+      color:
+        #8992a2;
+
+      font-size:
+        14px;
+
     }
 
-    .card h2 {
-      margin-top: 0;
+
+    /* =========================================
+       WORKFORCE PANEL
+    ========================================= */
+
+    .overview-wrapper {
+
+      padding:
+        40px;
+
+      border-radius:
+        35px;
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(
+            161,
+            219,
+            233,
+            0.82
+          ),
+          rgba(
+            237,
+            150,
+            190,
+            0.55
+          )
+        );
+
+      box-shadow:
+
+        0 30px 80px
+        rgba(
+          52,
+          81,
+          100,
+          0.14
+        );
+
     }
 
-    .grid {
-      display: grid;
+
+    .overview-card {
+
+      padding:
+        32px;
+
+      border-radius:
+        24px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.90
+        );
+
+      backdrop-filter:
+        blur(8px);
+
+    }
+
+
+    .overview-header {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
+
+    }
+
+
+    .overview-header h2 {
+
+      font-size:
+        20px;
+
+      color:
+        #17233e;
+
+    }
+
+
+    .version {
+
+      padding:
+        7px 12px;
+
+      border-radius:
+        20px;
+
+      background:
+        #ffe5ef;
+
+      color:
+        #c54f83;
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+
+    }
+
+
+    .overview-text {
+
+      margin-top:
+        26px;
+
+      color:
+        #6e7889;
+
+      font-size:
+        14px;
+
+    }
+
+
+    /* =========================================
+       FEATURE CARDS
+    ========================================= */
+
+    .features {
+
+      margin-top:
+        26px;
+
+      display:
+        grid;
 
       grid-template-columns:
         1fr 1fr;
 
-      gap: 15px;
+      gap:
+        16px;
 
-      margin-top: 24px;
     }
 
-    .item {
-      min-height: 110px;
 
-      padding: 22px;
+    .feature {
 
-      border-radius: 18px;
+      min-height:
+        120px;
 
-      background: #f8fbfc;
+      padding:
+        22px;
 
-      font-weight: 800;
+      border-radius:
+        18px;
 
-      display: flex;
+      background:
+        rgba(
+          240,
+          247,
+          249,
+          0.92
+        );
 
-      align-items: flex-end;
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      transition:
+        0.2s ease;
+
     }
 
-    /* ==============================
+
+    .feature:hover {
+
+      transform:
+        translateY(-3px);
+
+      background:
+        white;
+
+    }
+
+
+    .feature-icon {
+
+      font-size:
+        23px;
+
+    }
+
+
+    .feature-name {
+
+      font-size:
+        14px;
+
+      font-weight:
+        900;
+
+      color:
+        #17233e;
+
+    }
+
+
+    /* =========================================
        FOOTER
-    ============================== */
+    ========================================= */
 
-    footer {
-      width: min(1180px, 86%);
+    .footer {
 
-      margin: 30px auto;
+      width:
+        min(
+          1180px,
+          86%
+        );
 
-      color: #8992a3;
+      margin:
+        80px auto 30px;
 
-      font-size: 13px;
+      padding-top:
+        22px;
+
+      border-top:
+        1px solid
+        rgba(
+          100,
+          120,
+          140,
+          0.15
+        );
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
+
+      color:
+        #8b94a3;
+
+      font-size:
+        12px;
+
     }
 
-    /* ==============================
+
+    /* =========================================
        MOBILE
-    ============================== */
+    ========================================= */
 
-    @media (max-width: 850px) {
+    @media
+    (
+      max-width:
+      850px
+    ) {
 
-      main {
-        grid-template-columns: 1fr;
+      .header {
 
-        margin-top: 25px;
+        padding:
+          18px 6%;
 
-        gap: 35px;
       }
 
-      h1 {
-        letter-spacing: -2px;
+
+      .brand-text h2 {
+
+        font-size:
+          19px;
+
       }
 
-      .panel {
-        padding: 20px;
+
+      .brand-text p {
+
+        display:
+          none;
+
       }
+
+
+      .header-button {
+
+        padding:
+          11px 15px;
+
+        font-size:
+          12px;
+
+      }
+
+
+      .main {
+
+        width:
+          88%;
+
+        margin-top:
+          35px;
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          45px;
+
+      }
+
+
+      .hero-title {
+
+        letter-spacing:
+          -2.5px;
+
+      }
+
+
+      .description {
+
+        font-size:
+          17px;
+
+      }
+
+
+      .overview-wrapper {
+
+        padding:
+          20px;
+
+      }
+
+
+      .overview-card {
+
+        padding:
+          22px;
+
+      }
+
+
+      .footer {
+
+        flex-direction:
+          column;
+
+      }
+
+    }
+
+
+    @media
+    (
+      max-width:
+      500px
+    ) {
+
+      .logo {
+
+        width:
+          48px;
+
+        height:
+          48px;
+
+        font-size:
+          23px;
+
+      }
+
+
+      .brand-text h2 {
+
+        font-size:
+          17px;
+
+      }
+
+
+      .header-button {
+
+        display:
+          none;
+
+      }
+
+
+      .features {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+
+      .feature {
+
+        min-height:
+          100px;
+
+        padding:
+          17px;
+
+      }
+
     }
 
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
 
-  <header>
+  <!-- =========================================
+       HEADER
+  ========================================== -->
 
-    <div class="logo"></div>
+  <header class="header">
 
-    BetterEdge Solutions Inc.
+
+    <div class="brand">
+
+
+      <div class="logo">
+
+        B
+
+      </div>
+
+
+      <div class="brand-text">
+
+        <h2>
+
+          BESI
+
+        </h2>
+
+
+        <p>
+
+          BetterEdge Solutions Inc.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- TOP RIGHT PORTAL BUTTON -->
+
+    <a
+      class="header-button"
+
+      href="https://script.google.com/macros/s/AKfycbzDE2GFIBSgnYquA8CnrL2heQPtPw-ZQXJMmnERmBMzxWlQ7TkPl2KM9LhEh3Razm17qQ/exec"
+
+      target="_blank"
+
+      rel="noopener noreferrer"
+    >
+
+      Open Portal ↗
+
+    </a>
+
 
   </header>
 
 
-  <!-- MAIN -->
 
-  <main>
+  <!-- =========================================
+       MAIN CONTENT
+  ========================================== -->
+
+  <main class="main">
+
 
     <!-- LEFT SIDE -->
 
     <section>
 
+
       <div class="tag">
+
         WORKFORCE MANAGEMENT
+
       </div>
 
-      <h1>
 
-        Your people and<br>
+      <h1 class="hero-title">
+
+        Your people and
+
+        <br>
 
         sites,
 
-        <span>
+        <span class="pink">
+
           in one place.
+
         </span>
 
       </h1>
 
 
-      <p class="lead">
+      <p class="description">
 
         A simple home for managing workforce records,
         site assignments, documents, and access across
@@ -305,16 +971,22 @@
       </p>
 
 
-      <!-- MANAGEMENT PORTAL BUTTON -->
+
+      <!-- =====================================
+           THIS BUTTON GOES DIRECTLY TO
+           GOOGLE APPS SCRIPT
+      ====================================== -->
 
       <a
-        class="button"
+
+        class="portal-button"
 
         href="https://script.google.com/macros/s/AKfycbzDE2GFIBSgnYquA8CnrL2heQPtPw-ZQXJMmnERmBMzxWlQ7TkPl2KM9LhEh3Razm17qQ/exec"
 
         target="_blank"
 
-        rel="noopener"
+        rel="noopener noreferrer"
+
       >
 
         Open Management Portal ↗
@@ -322,67 +994,170 @@
       </a>
 
 
-      <p class="note">
 
-        Authorized team members can sign in through
-        the secure management portal.
+      <p class="authorized">
+
+        Authorized team members can sign in
+        through the secure management portal.
 
       </p>
 
+
     </section>
 
 
-    <!-- RIGHT SIDE -->
 
-    <section class="panel">
+    <!-- =========================================
+         RIGHT SIDE
+    ========================================== -->
 
-      <div class="card">
-
-        <h2>
-          Workforce overview
-        </h2>
-
-        <p>
-          Find what you need, all in one workspace.
-        </p>
+    <section class="overview-wrapper">
 
 
-        <div class="grid">
+      <div class="overview-card">
 
-          <div class="item">
-            People
-          </div>
 
-          <div class="item">
-            Sites
-          </div>
+        <div class="overview-header">
 
-          <div class="item">
-            Documents
-          </div>
 
-          <div class="item">
-            Access
-          </div>
+          <h2>
+
+            Workforce overview
+
+          </h2>
+
+
+          <span class="version">
+
+            BESI PORTAL
+
+          </span>
+
 
         </div>
 
+
+
+        <p class="overview-text">
+
+          Find what you need,
+          all in one workspace.
+
+        </p>
+
+
+
+        <div class="features">
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+
+              ♟
+
+            </div>
+
+            <div class="feature-name">
+
+              People
+
+            </div>
+
+          </div>
+
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+
+              ⌂
+
+            </div>
+
+            <div class="feature-name">
+
+              Sites
+
+            </div>
+
+          </div>
+
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+
+              ▤
+
+            </div>
+
+            <div class="feature-name">
+
+              Documents
+
+            </div>
+
+          </div>
+
+
+
+          <div class="feature">
+
+            <div class="feature-icon">
+
+              ⚙
+
+            </div>
+
+            <div class="feature-name">
+
+              Access
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
       </div>
 
+
     </section>
+
 
   </main>
 
 
-  <!-- FOOTER -->
 
-  <footer>
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
 
-    BetterEdge Solutions Inc.
-    •
-    Workforce Management Portal
+  <footer class="footer">
+
+
+    <div>
+
+      © 2026 BetterEdge Solutions Inc.
+
+    </div>
+
+
+    <div>
+
+      Workforce Management Portal
+
+    </div>
+
 
   </footer>
 
+
 </body>
+
 </html>
